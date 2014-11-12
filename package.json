@@ -1,0 +1,36 @@
+{
+  "name": "vocab-validate",
+  "version": "1.0.0",
+  "description": "validate data using vocab metadata",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openappjs/vocab-validate"
+  },
+  "keywords": [
+    "openvocab",
+    "vocab",
+    "schema",
+    "json-schema",
+    "validate",
+    "validation"
+  ],
+  "author": "ahdinosaur",
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/openappjs/vocab-validate/issues"
+  },
+  "homepage": "https://github.com/openappjs/vocab-validate",
+  "devDependencies": {
+    "tape": "^3.0.3"
+  },
+  "dependencies": {
+    "debug": "^2.1.0",
+    "traverse": "^0.6.6",
+    "xtend": "^4.0.0",
+    "z-schema": "^3.1.2"
+  }
+}
