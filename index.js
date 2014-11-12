@@ -38,13 +38,19 @@ function vocabValidate (vocab) {
     if (typeof cb === "function") {
       // async
       debug("async validate", data, schemas[0]);
-      return validator.validate(data, schemas[0], cb);
+      validator.validate(data, schemas[0], function (err, valid) {
+        if (valid) {
+          cb();
+        } else {
+          cb(err);
+        }
+      });
     } else {
       // sync
       debug("sync validate", data, schemas[0]);
       var valid = validator.validate(data, schemas[0]);
       if (valid) {
-        return valid;
+        return null;
       } else {
         return validator.getLastErrors();
       }

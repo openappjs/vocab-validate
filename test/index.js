@@ -80,12 +80,11 @@ test("single-dep Person object vocab", function (t) {
 function check (t, validate, goodData, badData) {
   t.ok(validate);
   goodData.forEach(function (data) {
-    var validation = validate(data);
-    t.equal(validation, true);
+    var errors = validate(data);
+    t.equal(errors, null);
   });
   badData.forEach(function (data) {
-    var validation = validate(data);
-    t.notEqual(validation, true);
-    t.equal(Array.isArray(validation), true);
+    var errors = validate(data);
+    t.ok(Array.isArray(errors));
   });
 }
